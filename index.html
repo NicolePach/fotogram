@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotogram</title>
+    <link rel="icon" type="image/vnd.icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="./style.css"/>
+    <script src="./script.js"></script>
+</head>
+<body onload="render()">
+    <header>
+        <img class="logo_header" src="./img/Capa_1.svg" alt="logo.fotogram">
+    </header>
+    <main>
+            <h1>Your personal photo album</h1>
+        <section id="thumbnails" class="gallery">
+            
+        </section>
+        <dialog closedby="any" id="gallery-fullview">
+            <figure> 
+                <figcaption></figcaption>
+                <img alt="described by figcaption">
+            </figure>
+            <button onclick="closeDialog()" aria-label="Schließen" type="button" id="close" class="close-button">
+                <img class="close" src="./img/Close icon.svg">
+            </button>
+            <button onclick="prevImage()" aria-label="vorheriges Bild" type="button" value="prev">
+                <img class="prev" src="./img/Button_left.svg">
+            </button>
+            <button onclick="nextImage()" aria-label="nächstes Bild" type="button" value="next">
+                <img class="next" src="./img/Button_right.svg">
+            </button>
+           
+              </div>
+        </dialog>
+    </main>
+    <footer>
+        <img class="logo_footer" src="./img/Logo.svg" alt="logo.developer">
+        <p>© 2023 Developer Akademie GmbH</p>
+    </footer>
+    
+    
+</body>
+
+</html>
