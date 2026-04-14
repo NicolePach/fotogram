@@ -3,7 +3,6 @@ body {
     margin: 0;
     background-color: #06171E;
     color: white;
-    height: 100vh;
 }
 
 .logo_header {
@@ -22,7 +21,7 @@ header {
 h1 {
     display: flex;
     text-align: center;
-    justify-content: center; 
+    justify-content: center;
     margin: 0;
     font-size: 56px;
     padding-bottom: 50px;
@@ -34,10 +33,9 @@ main {
     display: flex;
     flex-direction: column;
     text-align: center;
-    justify-content: center; 
-    
-
-      
+    justify-content: center;
+    position: relative;
+    min-height: 100%;
 }
 
 .gallery {
@@ -45,6 +43,11 @@ main {
 
 }
 
+.img-link {
+    overflow-clip-margin: unset;
+    text-decoration: none;
+    display: inline-flex;
+}
 
 .photo {
     height: 150px;
@@ -55,21 +58,21 @@ main {
     border-style: solid;
     border-width: 2px;
     margin: 24px 8px;
-	transform: scale(1);
-	transition: .3s ease-in-out;
+    transform: scale(1);
+    transition: .3s ease-in-out;
 }
 
 .photo:hover {
     border-color: white;
     -webkit-transform: scale(1.3);
-	transform: scale(1.2);
+    transform: scale(1.2);
 }
 
 dialog {
     background-color: #06171E;
-	box-sizing: border-box;
-	border-radius: 40px;
-    
+    box-sizing: border-box;
+    border-radius: 40px;
+    overscroll-behavior: contain;
 }
 
 dialog img {
@@ -81,7 +84,9 @@ dialog img {
 dialog::backdrop {
     background-color: #337599;
     opacity: 0.5;
-  }
+    overflow: hidden;
+    overscroll-behavior: contain;
+}
 
 dialog figcaption {
     font-size: 24px;
@@ -114,7 +119,7 @@ dialog button {
     right: 0;
 
 }
-   
+
 
 .prev {
     height: 40px;
@@ -127,6 +132,7 @@ dialog button {
 }
 
 footer {
+    box-sizing: border-box;
     background-color: #09212A;
     padding: 40px 140px;
     color: #627B84;
@@ -136,6 +142,11 @@ footer {
     align-items: center;
     gap: 16px;
     font-size: 13px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: min-content;
+
 }
 
 footer p {
@@ -146,119 +157,214 @@ footer p {
     height: 32px;
     padding-bottom: 20px;
 }
-@media (max-width: 400px){
+
+@media (max-width: 360px) {
     header {
         padding: 20px;
         display: flex;
         justify-content: center;
     }
+
     h1 {
         font-size: 36px;
     }
+
     main {
         display: flex;
         flex-direction: column;
         text-align: center;
         justify-content: center;
         padding: 50px 8px;
-}
-.photo {
-    margin: 8px 8px;
+    }
+
+    .photo {
+        margin: 8px 8px;
+    }
+
+    dialog img {
+        height: 300px;
+        width: 200px;
+        object-fit: cover;
+    }
+
+    figure {
+        margin: 16px 8px 8px 8px;
+        display: inline-block;
+    }
+
+    dialog figcaption {
+        font-weight: 500;
+        font-size: 20px;
+        margin: 0;
+        padding-top: 40px;
+    }
+
+    .close-button {
+        top: 20px;
+        right: 20px;
+    }
+
+
+    footer {
+        padding: 20px;
+        bottom: auto;
+    }
 }
 
-dialog img {
-    height: 300px;
-    width: 200px;
-    object-fit: cover;
-}
-figure {
-    margin: 16px 8px 8px 8px;
-}
-dialog figcaption {
-    font-weight: 500;
-    font-size: 20px;
-}
-.close {
-    position: absolute;
-    top: 4px;
-    right: 20px;
-    padding-bottom: 40px;
-}
-footer {
-    padding: 20px;
-}
-}
-
-@media (min-width: 401px) and (max-width: 700px){
+@media (min-width: 361px) and (max-width: 400px) {
     header {
         padding: 20px;
         display: flex;
         justify-content: center;
     }
+
     h1 {
-        font-size: 48px;
+        font-size: 36px;
     }
+
     main {
         display: flex;
         flex-direction: column;
         text-align: center;
         justify-content: center;
         padding: 50px 8px;
-}
-.photo {
-    margin: 8px 8px;
+    }
+
+    .photo {
+        margin: 8px 8px;
+    }
+
+    dialog img {
+        height: 300px;
+        width: 250px;
+        object-fit: cover;
+    }
+
+    figure {
+        margin: 16px 8px 8px 8px;
+        display: inline-block;
+    }
+
+    dialog figcaption {
+        font-weight: 500;
+        font-size: 20px;
+        margin: 0;
+        padding-top: 20px;
+        width: 60%;
+    }
+
+    .close-button {
+        top: 20px;
+        right: 20px;
+    }
+
+
+    footer {
+        padding: 20px;
+        bottom: auto;
+    }
 }
 
-dialog img {
-    height: 375px;
-    width: 300px;
-    object-fit: cover;
+@media (min-width: 401px) and (max-width: 700px) {
+    header {
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        padding: 50px 8px;
+    }
+
+    .photo {
+        margin: 8px 8px;
+    }
+
+    dialog img {
+        height: 375px;
+        width: 300px;
+        object-fit: cover;
+    }
+
+    figure {
+        margin: 16px 8px 8px 8px;
+    }
+
+    dialog figcaption {
+        font-weight: 500;
+        font-size: 22px;
+        padding-top: 30px;
+
+    }
+
+    .close-button {
+        top: 20px;
+        right: 20px;
+    }
+
+    footer {
+        padding: 20px;
+        bottom: auto;
+    }
 }
-figure {
-    margin: 16px 8px 8px 8px;
-}
-dialog figcaption {
-    font-weight: 500;
-}
-.close {
-    position: absolute;
-    top: 4px;
-    right: 20px;
-    padding-bottom: 40px;
-}
-footer {
-    padding: 20px;
-}
-}
-@media (min-width: 701px) and (max-width: 1000px){
+
+@media (min-width: 701px) and (max-width: 1000px) {
     header {
         display: flex;
         justify-content: center;
     }
+
     h1 {
         font-size: 48px;
     }
+
     main {
         display: flex;
         flex-direction: column;
         text-align: center;
         justify-content: center;
         padding: 50px 8px;
-}
-.photo {
-    margin: 8px 8px;
+    }
+
+    .photo {
+        margin: 8px 8px;
+    }
+
+    dialog img {
+        height: 50vh;
+        width: 50vb;
+        object-fit: cover;
+    }
+
+    figure {
+        margin: 16px 8px 8px 8px;
+    }
+
+    dialog figcaption {
+        font-weight: 600;
+    }
+
+    .close-button {
+        top: 20px;
+        right: 20px;
+    }
+
+    footer {
+        bottom: auto;
+    }
+
 }
 
-dialog img {
-    height: 50vh;
-    width: 50vb;
-    object-fit: cover;
-}
-figure {
-    margin: 16px 8px 8px 8px;
-}
-dialog figcaption {
-    font-weight: 600;
-}
-
+@media (min-width: 1001px) and (max-width: 1315px) {
+    footer {
+        bottom: auto;
+    }
 }
