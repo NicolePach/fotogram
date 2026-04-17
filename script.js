@@ -39,7 +39,6 @@ function getNoteTemplate(index) {
 	return `<a class="img-link" href="${thumbnailImages[index]}"><img class="photo" src="${thumbnailImages[index]}" alt="${thumbnailImagesAlt[index]}"></a>`
 };
 
-
 document.addEventListener('DOMContentLoaded', function () {
 	document.querySelectorAll(".gallery")
 		.forEach(gallery => gallery.addEventListener("click", handleGalleryClick));
@@ -69,8 +68,6 @@ function showInFullview(link) {
 	fullview.dataset.gallery = gallery.id;
 	fullview.showModal();
 }
-
-
 
 function closeDialog() {
 	const fullview = document.getElementById("gallery-fullview");

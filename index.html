@@ -12,7 +12,7 @@
 
 <body onload="render()">
     <header>
-        <img class="logo_header" src="./img/Capa_1.svg" alt="logo.fotogram">
+        <div class="header-wrapper"><img class="logo_header" src="./img/Capa_1.svg" alt="logo.fotogram"></div>
     </header>
     <main>
         <h1>Your personal photo album</h1>
@@ -27,6 +27,7 @@
             <button onclick="closeDialog()" aria-label="Schließen" type="button" id="close" class="close-button">
                 <img class="close" src="./img/Close icon.svg">
             </button>
+            <br>
             <button onclick="prevImage()" aria-label="vorheriges Bild" type="button" value="prev">
                 <img class="prev" src="./img/Button_left.svg">
             </button>

@@ -3,19 +3,25 @@ body {
     margin: 0;
     background-color: #06171E;
     color: white;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 }
 
 .logo_header {
     height: 41px;
 }
 
-
 header {
     background-color: #09212A;
-    padding: 20px 140px;
-    display: flex;
-    align-items: center;
+    padding: 20px 160px;
     height: fit-content;
+}
+
+.header-wrapper {
+    min-width: auto;
+    max-width: 1440px;
+    margin: 0 auto; 
 }
 
 h1 {
@@ -28,14 +34,14 @@ h1 {
 }
 
 main {
-    padding: 90px 140px;
+    margin: 0 auto;
+    padding: 80px 140px;
     max-width: 1440px;
     display: flex;
     flex-direction: column;
     text-align: center;
     justify-content: center;
     position: relative;
-    min-height: 100%;
 }
 
 .gallery {
@@ -108,7 +114,6 @@ dialog button {
     position: absolute;
     top: 30px;
     right: 50px;
-
 }
 
 .close {
@@ -117,9 +122,7 @@ dialog button {
     position: absolute;
     top: 0;
     right: 0;
-
 }
-
 
 .prev {
     height: 40px;
@@ -142,11 +145,8 @@ footer {
     align-items: center;
     gap: 16px;
     font-size: 13px;
-    position: absolute;
-    bottom: 0;
     width: 100%;
     height: min-content;
-
 }
 
 footer p {
@@ -159,6 +159,11 @@ footer p {
 }
 
 @media (max-width: 360px) {
+    body {
+        display: block;
+        grid-template-rows: auto;
+    }
+
     header {
         padding: 20px;
         display: flex;
@@ -183,7 +188,7 @@ footer p {
 
     dialog img {
         height: 300px;
-        width: 200px;
+        width: 210px;
         object-fit: cover;
     }
 
@@ -205,14 +210,14 @@ footer p {
         right: 20px;
     }
 
-
-    footer {
-        padding: 20px;
-        bottom: auto;
-    }
 }
 
-@media (min-width: 361px) and (max-width: 400px) {
+@media (min-width: 361px) and (max-width: 428px) {
+    body {
+        display: block;
+        grid-template-rows: auto;
+    }
+
     header {
         padding: 20px;
         display: flex;
@@ -237,7 +242,7 @@ footer p {
 
     dialog img {
         height: 300px;
-        width: 250px;
+        width: 270px;
         object-fit: cover;
     }
 
@@ -258,15 +263,9 @@ footer p {
         top: 20px;
         right: 20px;
     }
-
-
-    footer {
-        padding: 20px;
-        bottom: auto;
-    }
 }
 
-@media (min-width: 401px) and (max-width: 700px) {
+@media (min-width: 429px) and (max-width: 700px) {
     header {
         padding: 20px;
         display: flex;
@@ -303,17 +302,11 @@ footer p {
         font-weight: 500;
         font-size: 22px;
         padding-top: 30px;
-
     }
 
     .close-button {
         top: 20px;
         right: 20px;
-    }
-
-    footer {
-        padding: 20px;
-        bottom: auto;
     }
 }
 
@@ -356,16 +349,5 @@ footer p {
     .close-button {
         top: 20px;
         right: 20px;
-    }
-
-    footer {
-        bottom: auto;
-    }
-
-}
-
-@media (min-width: 1001px) and (max-width: 1315px) {
-    footer {
-        bottom: auto;
     }
 }
